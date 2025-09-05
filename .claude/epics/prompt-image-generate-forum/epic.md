@@ -3,8 +3,9 @@ name: prompt-image-generate-forum
 status: backlog
 created: 2025-09-05T05:05:29Z
 progress: 0%
+updated: 2025-09-05T05:23:33Z
 prd: .claude/prds/prompt-image-generate-forum.md
-github: [Will be updated when synced to GitHub]
+github: https://github.com/gakaki/picture_fourm/issues/1
 ---
 
 # Epic: prompt-image-generate-forum
@@ -200,16 +201,16 @@ github: [Will be updated when synced to GitHub]
 
 ## 已创建任务
 
-- [ ] 001.md - 项目基础搭建 (parallel: true)
-- [ ] 002.md - 用户认证系统 (parallel: false, depends_on: [001])
-- [ ] 003.md - 图像生成服务 (parallel: false, depends_on: [001, 002])
-- [ ] 004.md - 论坛核心功能 (parallel: true, depends_on: [002])
-- [ ] 005.md - 社区互动系统 (parallel: true, depends_on: [002, 004])
-- [ ] 006.md - 提示词模板库 (parallel: true, depends_on: [002])
-- [ ] 007.md - 前端界面开发 (parallel: true, depends_on: [001])
-- [ ] 008.md - 管理后台基础 (parallel: true, depends_on: [002, 004])
-- [ ] 009.md - 支付与会员系统 (parallel: false, depends_on: [002, 007])
-- [ ] 010.md - 部署与优化 (parallel: false, depends_on: all)
+- [ ] #5 - 项目基础搭建 (parallel: true)
+- [ ] #7 - 用户认证系统 (parallel: false, depends_on: [5])
+- [ ] #8 - 图像生成服务 (parallel: false, depends_on: [5, 7])
+- [ ] #2 - 论坛核心功能 (parallel: true, depends_on: [7])
+- [ ] #3 - 社区互动系统 (parallel: true, depends_on: [7, 2])
+- [ ] #4 - 提示词模板库 (parallel: true, depends_on: [7])
+- [ ] #6 - 前端界面开发 (parallel: true, depends_on: [5])
+- [ ] #9 - 管理后台基础 (parallel: true, depends_on: [7, 2])
+- [ ] #10 - 支付与会员系统 (parallel: false, depends_on: [7, 6])
+- [ ] #11 - 部署与优化 (parallel: false, depends_on: all)
 
 **任务统计**：
 - 任务总数：10个
