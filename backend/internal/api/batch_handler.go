@@ -6,8 +6,8 @@ import (
 	"strconv"
 	"time"
 
-	"nano-banana-qwen/internal/models"
-	"nano-banana-qwen/internal/services"
+	"nano-bana-qwen/internal/models"
+	"nano-bana-qwen/internal/services"
 
 	"github.com/gin-gonic/gin"
 	"go.mongodb.org/mongo-driver/bson"
@@ -209,7 +209,7 @@ func (h *BatchHandler) GetBatchJobStatus(c *gin.Context) {
 			FailedImages:    job.FailedImages,
 			Progress:        h.calculateProgress(job.CompletedImages, job.TotalImages),
 			Message:         "任务状态",
-			UpdatedAt:       job.UpdatedAt,
+			UpdatedAt:       time.Now(),
 		}
 	}
 

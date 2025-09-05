@@ -4,8 +4,8 @@ import (
 	"net/http"
 	"strconv"
 
-	"nano-banana-qwen/internal/models"
-	"nano-banana-qwen/internal/services"
+	"nano-bana-qwen/internal/models"
+	"nano-bana-qwen/internal/services"
 
 	"github.com/gin-gonic/gin"
 	"go.mongodb.org/mongo-driver/bson/primitive"

@@ -6,7 +6,7 @@ import (
 	"math"
 	"time"
 
-	"nano-banana-qwen/internal/models"
+	"nano-bana-qwen/internal/models"
 
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"

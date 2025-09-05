@@ -13,17 +13,20 @@ import (
 )
 
 func main() {
-	log.Println("🚀 启动 Nano Banana Qwen 服务器...")
+	log.Println("🚀 启动 Nano Bana Qwen 论坛服务器...")
 
 	// 加载配置
 	cfg := config.LoadConfig()
+	
+	// OpenRouter API Key 检查（如果为空则警告但不阻断启动）
 	if cfg.OpenRouterAPIKey == "" {
-		log.Fatal("❌ OpenRouter API Key 未设置，请检查环境变量")
+		log.Println("⚠️  OpenRouter API Key 未设置，图片生成功能将无法使用")
 	}
 
 	// 初始化数据库
 	if err := services.InitDatabase(); err != nil {
-		log.Fatal("❌ 数据库初始化失败:", err)
+		log.Printf("⚠️  数据库初始化失败: %v，服务器将在无数据库模式下启动", err)
+		log.Println("💡 请检查数据库连接配置或启动本地数据库服务")
 	}
 
 	// 设置路由

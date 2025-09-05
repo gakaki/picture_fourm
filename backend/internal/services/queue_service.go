@@ -5,10 +5,9 @@ import (
 	"encoding/json"
 	"fmt"
 	"log"
-	"strconv"
 	"time"
 
-	"nano-banana-qwen/internal/models"
+	"nano-bana-qwen/internal/models"
 
 	"github.com/redis/go-redis/v9"
 )
@@ -92,8 +91,6 @@ func (q *QueueService) UpdateJobStatus(jobID string, status models.JobStatus) er
 
 // UpdateJobProgress 更新任务进度
 func (q *QueueService) UpdateJobProgress(jobID string, completed, total int, message string) error {
-	ctx := context.Background()
-	
 	// 获取当前状态
 	status, err := q.GetJobStatus(jobID)
 	if err != nil {

@@ -5,8 +5,8 @@ import (
 	"log"
 	"time"
 
-	"nano-banana-qwen/internal/config"
-	"nano-banana-qwen/internal/models"
+	"nano-bana-qwen/internal/config"
+	"nano-bana-qwen/internal/models"
 
 	"github.com/go-resty/resty/v2"
 )
