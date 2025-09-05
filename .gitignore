@@ -1,0 +1,69 @@
+# Node
+node_modules/
+dist/
+.pnpm-store/
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# Go
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+vendor/
+go.sum
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Rust
+/target/
+Cargo.lock
+**/*.rs.bk
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Project specific
+data/
+logs/
+log/
+.env.local
+.env.*.local
+*.bak
+~$*.*
+
+# Test
+coverage/
+*.cover
+.hypothesis/
+.pytest_cache/
+test_report.json
+
+# Build
+build/
+dist/
+out/
+
+# Temporary
+tmp/
+temp/
+*.tmp
