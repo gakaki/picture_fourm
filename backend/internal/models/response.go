@@ -32,6 +32,42 @@ func ErrorResponse(error string, message string) APIResponse {
 	}
 }
 
+// PaginatedResponse 分页响应
+type PaginatedResponse struct {
+	Data       interface{} `json:"data"`
+	Total      int64       `json:"total"`
+	Page       int         `json:"page"`
+	Limit      int         `json:"limit"`
+	TotalPages int         `json:"total_pages"`
+}
+
+// PaginatedSuccessResponse 分页成功响应
+func PaginatedSuccessResponse(data interface{}, total int64, page, limit int, message string) APIResponse {
+	if message == "" {
+		message = "获取数据成功"
+	}
+	
+	totalPages := int(total / int64(limit))
+	if total%int64(limit) > 0 {
+		totalPages++
+	}
+	if totalPages == 0 {
+		totalPages = 1
+	}
+	
+	return APIResponse{
+		Success: true,
+		Message: message,
+		Data: PaginatedResponse{
+			Data:       data,
+			Total:      total,
+			Page:       page,
+			Limit:      limit,
+			TotalPages: totalPages,
+		},
+	}
+}
+
 // OpenRouterRequest OpenRouter API请求格式
 type OpenRouterRequest struct {
 	Model  string                 `json:"model"`

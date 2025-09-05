@@ -7,9 +7,9 @@ import (
 	"os/signal"
 	"syscall"
 
-	"nano-banana-qwen/internal/api"
-	"nano-banana-qwen/internal/config"
-	"nano-banana-qwen/internal/services"
+	"nano-bana-qwen/internal/api"
+	"nano-bana-qwen/internal/config"
+	"nano-bana-qwen/internal/services"
 )
 
 func main() {

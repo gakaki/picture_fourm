@@ -7,19 +7,26 @@ import (
 
 // Generation 生成记录模型
 type Generation struct {
-	ID               primitive.ObjectID `json:"id" bson:"_id,omitempty"`
+	ID               primitive.ObjectID  `json:"id" bson:"_id,omitempty"`
+	UserID           primitive.ObjectID  `json:"user_id" bson:"user_id"` // 生成用户ID
+	User             *User              `json:"user,omitempty" bson:"-"` // 不存储在数据库中，通过查询填充
 	PromptID         *primitive.ObjectID `json:"prompt_id" bson:"prompt_id"`
 	PromptText       string             `json:"prompt_text" bson:"prompt_text"`
 	ImageURL         string             `json:"image_url" bson:"image_url"`
 	ThumbnailURL     string             `json:"thumbnail_url" bson:"thumbnail_url"`
 	GenerationParams GenerationParams   `json:"generation_params" bson:"generation_params"`
+	Model            string             `json:"model" bson:"model"` // 使用的AI模型
+	CreditsUsed      int64              `json:"credits_used" bson:"credits_used"` // 消耗的积分
 	Status           string             `json:"status" bson:"status"` // pending, processing, completed, failed
 	ErrorMessage     string             `json:"error_message" bson:"error_message"`
 	GenerationTime   float64            `json:"generation_time" bson:"generation_time"`
 	BatchJobID       *primitive.ObjectID `json:"batch_job_id" bson:"batch_job_id"`
 	IsImg2Img        bool               `json:"is_img2img" bson:"is_img2img"`
 	SourceImageID    *primitive.ObjectID `json:"source_image_id" bson:"source_image_id"`
+	IsPublic         bool               `json:"is_public" bson:"is_public"` // 是否公开显示
+	PostID           *primitive.ObjectID `json:"post_id,omitempty" bson:"post_id,omitempty"` // 关联的帖子ID
 	CreatedAt        time.Time          `json:"created_at" bson:"created_at"`
+	UpdatedAt        time.Time          `json:"updated_at" bson:"updated_at"`
 	Deleted          bool               `json:"deleted" bson:"deleted"`
 	DeletedAt        *time.Time         `json:"deleted_at" bson:"deleted_at"`
 	DeletedReason    string             `json:"deleted_reason" bson:"deleted_reason"`

@@ -1,4 +1,4 @@
-module simple-server
+module nano-bana-qwen
 
 go 1.25
 

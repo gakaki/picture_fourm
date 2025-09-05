@@ -1,10 +1,15 @@
-# Node
+# Node.js
 node_modules/
 dist/
 .pnpm-store/
 *.log
 npm-debug.log*
 pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.npm
+.yarn-integrity
+.pnpm-lock.yaml
 
 # Go
 *.exe
@@ -16,6 +21,9 @@ pnpm-debug.log*
 *.out
 vendor/
 go.sum
+coverage.out
+coverage.html
+build-errors.log
 
 # Python
 __pycache__/
@@ -26,44 +34,113 @@ __pycache__/
 env/
 venv/
 .venv
+.pytest_cache/
 pip-log.txt
 pip-delete-this-directory.txt
+*.pyc
+.coverage
 
 # Rust
 /target/
 Cargo.lock
 **/*.rs.bk
 
-# IDE
+# IDE & Editors
 .idea/
 .vscode/
 *.swp
 *.swo
 *~
 .DS_Store
+.code-workspace
+*.sublime-workspace
+*.sublime-project
+.history/
 
-# Project specific
+# 项目特定文件
 data/
 logs/
 log/
+tmp/
+temp/
+server.log*
+build-errors.log
+.qodo
 .env.local
 .env.*.local
+.env.production
+.env.staging
 *.bak
 ~$*.*
+.cache/
 
-# Test
+# 测试相关
 coverage/
 *.cover
 .hypothesis/
 .pytest_cache/
 test_report.json
+.nyc_output/
+lcov.info
 
-# Build
+# 构建输出
 build/
 dist/
 out/
+.next/
+.nuxt/
+.output/
+.vercel/
+.netlify/
 
-# Temporary
+# 临时文件
 tmp/
 temp/
 *.tmp
+*.temp
+.temporary
+
+# 数据库文件
+*.db
+*.sqlite
+*.sqlite3
+
+# 操作系统
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# 上传文件（保留结构，忽略内容）
+data/uploads/*
+data/images/*
+data/temp/*
+!data/uploads/.gitkeep
+!data/images/.gitkeep
+!data/temp/.gitkeep
+
+# 日志文件
+*.log
+logs/
+log/
+server.log*
+
+# 安全相关
+*.pem
+*.key
+*.crt
+*.p12
+.secrets
+
+# 备份文件
+*.backup
+*.bak
+*~
+*.orig
+
+# Lock files (除了 pnpm-lock.yaml)
+package-lock.json
+yarn.lock

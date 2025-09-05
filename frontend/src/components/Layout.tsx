@@ -1,19 +1,16 @@
+import { Outlet } from 'react-router-dom'
 import { Sidebar } from './Sidebar'
 import { Header } from './Header'
 import { useSnapshot } from 'valtio'
 import { appStore } from '@/stores/appStore'
 import { ToastProvider, ToastViewport } from './ui/toast'
 
-interface LayoutProps {
-  children: React.ReactNode
-}
-
-export function Layout({ children }: LayoutProps) {
+export function Layout() {
   const snap = useSnapshot(appStore)
 
   return (
     <ToastProvider>
-      <div className="min-h-screen bg-gray-50">
+      <div className="min-h-screen bg-background">
         {/* Header */}
         <Header />
         
@@ -28,7 +25,7 @@ export function Layout({ children }: LayoutProps) {
             }`}
           >
             <div className="p-6">
-              {children}
+              <Outlet />
             </div>
           </main>
         </div>

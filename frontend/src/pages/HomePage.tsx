@@ -7,7 +7,6 @@ import {
   FileText, 
   Images, 
   History, 
-  TrendingUp, 
   Clock,
   Star,
   Zap

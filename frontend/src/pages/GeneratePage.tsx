@@ -5,7 +5,7 @@ import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { apiService } from '@/services/api'
 import { appActions } from '@/stores/appStore'
-import { Wand2, Upload, Settings, Download } from 'lucide-react'
+import { Wand2, Upload, Settings } from 'lucide-react'
 import * as Select from '@radix-ui/react-select'
 import * as Tabs from '@radix-ui/react-tabs'
 
